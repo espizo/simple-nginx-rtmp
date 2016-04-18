@@ -6,7 +6,7 @@ WORKDIR /root
 
 RUN apt-get install -q -y software-properties-common \
     && add-apt-repository ppa:mc3man/trusty-media && apt-get -q -y update \
-    && apt-get install -q -y build-essential ffmpeg curl \
+    && apt-get install -q -y build-essential ffmpeg curl libxml2 libxslt-dev \
     && apt-get build-dep -q -y nginx \
     && apt-get -q -y clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
@@ -29,6 +29,7 @@ RUN cd nginx-$NGINX_VERSION \
         --http-log-path=/var/log/nginx/access.log \
         --pid-path=/var/run/nginx.pid \
         --lock-path=/var/run/nginx.lock \
+        --with-http_xslt_module \
         --add-module=/root/nginx-rtmp-module-$NGINX_RTMP_MODULE_VERSION \
     && make install
 
