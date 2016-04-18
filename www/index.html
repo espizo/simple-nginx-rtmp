@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Stream Control/Stats</title>
+        <script src="https://content.jwplatform.com/libraries/url_to_the_player.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div style="float:left;">
+            <div id="video1">Loading the player ...</div>
+            <script type="text/javascript">
+                jwplayer("video1").setup({
+                    file: "rtmp://server.url/stream/flv:name",
+                    height: 144,
+                    width: 256,
+                    autostart: true,
+                });
+            </script>
+        </div>
+       <div style="clear:both;float:left;font-size:10px;">
+            <iframe frameBorder="0" seamless src="/stat" width="900px" height="500px"></iframe>
+        </div>
+   </body>
+</html>
