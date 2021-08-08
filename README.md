@@ -1,4 +1,4 @@
-# zoo-nginx-rtmp
+# simple-nginx-rtmp
 
 This is a very simple nginx-rtmp setup I'm using to pull a remote stream, record it, and then restream it to another rtmp server.
 
